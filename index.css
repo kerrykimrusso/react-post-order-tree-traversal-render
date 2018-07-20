@@ -1,0 +1,50 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 2rem;
+}
+
+li ul {
+  margin: 0 0 0 9px;
+}
+
+ul > li {
+  position: relative;
+  margin-left: -1rem;
+}
+
+ul > li::before {
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 0.6rem;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+ul > li::after {
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 100%;
+  border-left: 1px solid #eee;
+}
+
+ul:first-child > li::before,
+ul:first-child > li::after {
+  display: none;
+}
+
+ul > li:last-child::after {
+  display: none;
+}
+
+.content {
+  user-select: none;
+}
